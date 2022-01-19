@@ -1,0 +1,2 @@
+sun.misc.BASE64Decoder -> base64.BASE64Dec:
+sun.misc.BASE64Encoder -> base64.BASE64Enc:
