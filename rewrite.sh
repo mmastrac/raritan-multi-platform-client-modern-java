@@ -45,3 +45,8 @@ mv $DIST/*.jar "$APP/Contents/Resources/"
 
 cp inputs/app/Info.plist "$APP/Contents/"
 cp inputs/app/kvm.icns "$APP/Contents/Resources/"
+
+pushd "$DIST"
+zip -9r "RaritanMPC.app.zip" "Raritan MPC.app"
+popd
+
