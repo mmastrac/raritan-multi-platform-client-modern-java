@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu -o pipefail
 
-JAVA=/usr/local/opt/openjdk\@11/bin/java
+JAVA=`which java`
 BUILD=build/
 DIST=build/dist/
 
@@ -32,6 +32,9 @@ cp $BUILD/AmpPb.jar $DIST/
 cp $BUILD/jaws.jar $DIST/
 cp $BUILD/sdeploy.jar $DIST/
 cp $BUILD/sFoxtrot.jar $DIST/
+
+mkdir -p $BUILD/jars
+cp $DIST/*.jar $BUILD/jars/
 
 cp inputs/app/run.sh $DIST/run.sh
 chmod a+x $DIST/run.sh

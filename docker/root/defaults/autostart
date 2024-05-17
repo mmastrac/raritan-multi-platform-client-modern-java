@@ -1,0 +1,2 @@
+cd /mpc-client/
+./run.sh > /tmp/log
