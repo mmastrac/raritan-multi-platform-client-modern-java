@@ -40,7 +40,7 @@ if [[ -f "$INPUT" ]]; then
         fi
     fi
 else
-    echo "File does not exist. Downloading."
+    echo "File does not exist. Downloading..."
     curl -o "$TEMP_INPUT" "$DOWNLOAD_URL"
     DOWNLOADED_MD5=$(calculate_md5 "$TEMP_INPUT")
     if [[ "$DOWNLOADED_MD5" == "$INPUT_MD5" ]]; then
@@ -93,3 +93,4 @@ pushd "$DIST"
 zip -9r "RaritanMPC.app.zip" "Raritan MPC.app"
 popd
 
+bsdiff inputs/orig/mpc-installer.MPC_7.0.3.5.62.jar.zip build/dist/RaritanMPC.app.zip build/dist/RaritanMPC.app.zip.bspatch
